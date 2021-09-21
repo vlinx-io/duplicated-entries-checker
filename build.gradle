@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.jetbrains.kotlin.jvm' version '1.4.32'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+
+group 'io.vlinx'
+version '1.0.0'
+
+mainClassName = 'io.vlinx.duplicated.checker.MainKt'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.vlinx:vlinx-logging:1.0.0'
+    implementation 'io.vlinx:process-utils:1.0.1'
+    implementation group: 'commons-cli', name: 'commons-cli', version: '1.4'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
